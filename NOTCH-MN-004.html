@@ -1,0 +1,70 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NOTCH-MN-004 Details</title>
+        <style>
+            body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+            .container { max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px; }
+            h1 { color: #333; }
+            p { font-size: 18px; }
+            .button {
+                display: inline-block;
+                margin: 10px;
+                padding: 10px 20px;
+                font-size: 16px;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                text-decoration: none;
+                cursor: pointer;
+            }
+            .refresh-button, .home-button {
+                display: block;
+                width: 200px;
+                margin: 15px auto;
+                padding: 10px;
+                font-size: 16px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                text-decoration: none;
+                cursor: pointer;
+            }
+            .timestamp { font-size: 14px; color: red; margin-top: 20px; }
+        </style>
+        <script>
+            function redirectToHome() {
+                alert("Issue reported successfully! Redirecting to Notch...");
+                setTimeout(function() {
+                    window.location.href = "https://notch.sa/";
+                }, 2000);
+            }
+            function refreshPage() {
+                location.reload();
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <img src="logo.png" alt="Company Logo" class="logo" style="max-width: 150px; display: block; margin: 0 auto 20px;">
+            <h1>Device: NOTCH-MN-004</h1>
+            <p><strong>Type:</strong> Monitor</p>
+            <p><strong>Assigned To:</strong> Rawan Aboshahadah</p>
+            
+            <h2>Report an Issue</h2>
+            <a href="mailto:IT@notch.sa?subject=Issue Report for NOTCH-MN-004&body=Device Name: NOTCH-MN-004%0D%0AAssigned To: Rawan Aboshahadah%0D%0AIssue: Lagging" class="button" style="background-color: #f4b400;" onclick="redirectToHome();">Lagging</a>
+            <a href="mailto:IT@notch.sa?subject=Issue Report for NOTCH-MN-004&body=Device Name: NOTCH-MN-004%0D%0AAssigned To: Rawan Aboshahadah%0D%0AIssue: Needs Maintenance" class="button" style="background-color: #4285F4;" onclick="redirectToHome();">Needs Maintenance</a>
+            <a href="mailto:IT@notch.sa?subject=Issue Report for NOTCH-MN-004&body=Device Name: NOTCH-MN-004%0D%0AAssigned To: Rawan Aboshahadah%0D%0AIssue: Needs Repair" class="button" style="background-color: #EA4335;" onclick="redirectToHome();">Needs Repair</a>
+
+            <p class="timestamp">Last Updated: Unknown</p>
+
+            <button class="refresh-button" onclick="refreshPage()">🔄 Refresh Page</button>
+            <a href="https://notch.sa/" class="home-button">🏠 Back to Home</a>
+        </div>
+    </body>
+    </html>
+    
