@@ -1,0 +1,82 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NOTCH-KB-003 Details</title>
+        <style>
+            body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+            .container { max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px; }
+            h1 { color: #333; }
+            img.logo { width: 200px; margin-bottom: 20px; }
+            .button {
+                display: inline-block;
+                margin: 10px;
+                padding: 10px 20px;
+                font-size: 18px;
+                font-weight: bold;
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+            }
+            input[type=email] {
+                width: 80%;
+                padding: 8px;
+                margin-bottom: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+        </style>
+        <script>
+            function submitIssue(deviceName, issueType) {
+                var employeeEmail = document.getElementById("employeeEmail").value;
+                if (!employeeEmail) {
+                    alert("❌ Please enter your email before submitting.");
+                    return;
+                }
+
+                var data = {
+                    device_name: deviceName,
+                    issue_type: issueType,
+                    employee_email: employeeEmail
+                };
+
+                fetch("https://script.google.com/macros/s/AKfycbwhXiBCmB9P1BEYlu-bJOH0InZ7MzOhvrUSUsuraROBw9do9UDasqRbQIXKSkvT2oVa/exec", {
+                    method: "POST",
+                    body: JSON.stringify(data),
+                    headers: { "Content-Type": "application/json" }
+                })
+                .then(response => response.text())
+                .then(response => alert("✅ Ticket Created: " + response))
+                .catch(error => alert("❌ Error creating ticket: " + error));
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <img class="logo" src="https://shrooq-notcharc.github.io/devices-pages/logo-01.png" alt="Company Logo">
+            <h1>Device: NOTCH-KB-003</h1>
+            <p><strong>Type:</strong> Keyboard</p>
+            <p><strong>Assigned To:</strong> Mohammad Asfal</p>
+            
+            <h2>Report an Issue</h2>
+            <p><strong>Your Email:</strong></p>
+            <input type="email" id="employeeEmail" placeholder="Enter your email" required>
+            
+            
+        <a href="#" onclick="submitIssue('NOTCH-KB-003', 'Lagging');" 
+        class="button" style="background-color: #f4b400;">Lagging</a>
+    
+            
+        <a href="#" onclick="submitIssue('NOTCH-KB-003', 'Needs Maintenance');" 
+        class="button" style="background-color: #4285F4;">Needs Maintenance</a>
+    
+            
+        <a href="#" onclick="submitIssue('NOTCH-KB-003', 'Needs Repair');" 
+        class="button" style="background-color: #DB4437;">Needs Repair</a>
+    
+        </div>
+    </body>
+    </html>
+    
